@@ -17,14 +17,26 @@
       <div class="url-form">
         <input
           type="text"
-          name="input-url"
+          id="original-url"
+          name="originalUrl"
           placeholder="Enter your URL here"
-          class="input"
+          class="url-input"
         />
-        <button class="url-btn">Generate URL!</button>
+        <input
+          type="text"
+          id="unique-name"
+          name="uniqueName"
+          placeholder="Enter your Unique Name here"
+          class="url-input"
+        />
+        <button class="url-btn" onclick="clickHandler()">Generate URL!</button>
         <div class="content">The new URL is :</div>
       </div>
     </div>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"
+    ></script>
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

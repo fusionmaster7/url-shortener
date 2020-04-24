@@ -5,7 +5,7 @@ const baseUrl = process.env.BASE_URL || "http://localhost:3000";
 const createShortLink = async (req, res) => {
   let { originalUrl, uniqueName } = req.body;
   try {
-    let nameExists = Url.findOne({ uniqueName: uniqueName });
+    let nameExists = await Url.findOne({ uniqueName });
     if (nameExists) {
       return res.status(403).json({
         ok: false,
