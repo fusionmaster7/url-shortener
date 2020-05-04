@@ -5,20 +5,20 @@ const urlSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  shortUrl: {
+  baseUrl: {
     type: String,
     required: true,
   },
-  uniqueName: {
+  customUrl: {
     type: String,
     required: true,
   },
-  dateCreated: {
+  created: {
     type: Date,
-    default: Date.now,
+    default: Date.now(),
   },
 });
 
 const Url = mongoose.model("Url", urlSchema);
 
-module.exports = Url;
+module.exports = { urlSchema, Url };

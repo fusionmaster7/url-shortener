@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/url";
+const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/users";
 
 const connect = () => {
   mongoose
@@ -12,7 +12,7 @@ const connect = () => {
       console.log(err);
     });
   mongoose.connection.on("error", (err) => {
-    console.log(`DB Connections error: ${err.message}`);
+    console.log(`Connection Error: ${err}`);
   });
 };
 
