@@ -9,7 +9,7 @@ const urlSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  customUrl: {
+  customName: {
     type: String,
     required: true,
   },
