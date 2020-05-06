@@ -18,10 +18,9 @@ const getUrls = async (req, res) => {
 };
 
 const addUrl = async (req, res) => {
-  const { username, originalUrl, baseUrl, customName } = req.body;
+  const { username, originalUrl, customName } = req.body;
   const newUrl = {
     originalUrl,
-    baseUrl,
     customName,
   };
   const user = await User.findOne({ username });

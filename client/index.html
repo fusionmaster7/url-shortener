@@ -3,8 +3,52 @@
   <head>
     <title>Url Shortener</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <div class="container">
+      <div class="heading">
+        Create Shorter URLs
+      </div>
+      <div class="sub-heading">
+        Just enter your username and Voila!
+      </div>
+      <div><hr class="sep" /></div>
+      <input type="text" id="usrname" placeholder="Enter your username" />
+      <div class="btns">
+        <div><button class="btn" onclick="signUpHandler()">Signup</button></div>
+        <div><button class="btn" onclick="loginHandler()">Login</button></div>
+      </div>
+      <div class="content">
+        <div class="content-heading"></div>
+        <div class="urls">
+          <div class="url">
+            <div>Custom URL</div>
+            <div>Date created</div>
+          </div>
+        </div>
+        <div class="custom">
+          <input type="text" id="base" placeholder="Enter Original URL" />
+          <input type="text" id="custom" placeholder="Enter Custom Name" />
+          <button class="custom-btn" onclick="addUrl()">Add URL!</button>
+        </div>
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"
+    ></script>
     <script type="text/javascript" src="./script.js"></script>
   </body>
 </html>

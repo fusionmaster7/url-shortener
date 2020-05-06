@@ -5,7 +5,7 @@ const signUser = async (req, res) => {
   const { username } = req.body;
   const user = await User.findOne({ username });
   if (user) {
-    return res.status(403).json({
+    return res.json({
       okay: false,
       message: "Username already exists. Please select another",
     });
@@ -30,7 +30,7 @@ const loginUser = async (req, res) => {
       username,
     });
   } else {
-    res.status(404).json({
+    res.json({
       okay: false,
       message: "User not found",
     });

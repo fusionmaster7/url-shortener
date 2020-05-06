@@ -5,10 +5,6 @@ const urlSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  baseUrl: {
-    type: String,
-    required: true,
-  },
   customName: {
     type: String,
     required: true,

@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const db = require("./db");
+const cors = require("cors");
 
 const { signUser, loginUser } = require("./Controllers/users");
 const { getUrls, addUrl, viewUrl } = require("./Controllers/url");
@@ -9,6 +10,7 @@ const app = express();
 db.connect();
 
 app.use(express.json());
+app.use(cors());
 
 const port = process.env.PORT || 8000;
 
