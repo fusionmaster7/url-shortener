@@ -6,10 +6,7 @@ const genTableUrl = (urlObj) => {
   const urlDiv = document.createElement("div");
   const customDiv = document.createElement("div");
   const anchor = document.createElement("a");
-  anchor.setAttribute(
-    "href",
-    `http://localhost:8000/${username}/${urlObj.customName}`
-  );
+  anchor.setAttribute("href", `/${username}/${urlObj.customName}`);
   anchor.setAttribute("target", "_blank");
   anchor.innerText = urlObj.customName;
   customDiv.append(anchor);
@@ -22,7 +19,7 @@ const genTableUrl = (urlObj) => {
 };
 
 const getAll = async () => {
-  const res = await axios.get(`http://localhost:8000/${username}`);
+  const res = await axios.get(`/${username}`);
   res.data.urls.forEach((e) => genTableUrl(e));
 };
 
@@ -30,7 +27,7 @@ const addUrl = async () => {
   const originalUrl = document.getElementById("base").value;
   const customName = document.getElementById("custom").value;
   const res = await axios.post(
-    "http://localhost:8000/add",
+    "/add",
     { username, originalUrl, customName },
     { headers: { "Content-type": "application/json" } }
   );
@@ -43,7 +40,7 @@ const addUrl = async () => {
 const signUpHandler = async () => {
   username = document.getElementById("usrname").value;
   const res = await axios.post(
-    "http://localhost:8000/signup",
+    "/signup",
     { username },
     { headers: { "Content-type": "application/json" } }
   );
@@ -60,7 +57,7 @@ const signUpHandler = async () => {
 const loginHandler = async () => {
   username = document.getElementById("usrname").value;
   const res = await axios.post(
-    "http://localhost:8000/login",
+    "/login",
     { username },
     { headers: { "Content-type": "application/json" } }
   );
